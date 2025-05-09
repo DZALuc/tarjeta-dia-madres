@@ -7,16 +7,16 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: linear-gradient(to top right, #ffe6f0, #ffd1dc);
+      padding: 20px;
+      background: linear-gradient(135deg, #ffdde1 0%, #fbd0d9 40%, #fce3ec 100%);
       font-family: 'Segoe UI', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       text-align: center;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-y: auto;
       position: relative;
     }
 
@@ -24,19 +24,25 @@
       color: #b20000;
       font-size: 2.5em;
       margin: 10px;
+      text-shadow: 1px 1px 2px #fff;
     }
 
     p {
       color: #6e2c00;
       font-size: 1.2em;
       max-width: 90%;
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
     img {
-      width: 220px;
-      border-radius: 15px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+      width: 240px;
+      border-radius: 20px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
       margin: 15px 0;
+      border: 4px solid white;
     }
 
     .flower {
@@ -46,6 +52,7 @@
       border-radius: 50%;
       position: absolute;
       animation: bloom 10s infinite ease-in-out;
+      z-index: 0;
     }
 
     @keyframes bloom {
@@ -55,10 +62,14 @@
     }
 
     .signature {
-      position: absolute;
-      bottom: 10px;
+      margin-top: 30px;
       font-size: 0.9em;
       color: #8e44ad;
+      z-index: 2;
+    }
+
+    audio {
+      margin-top: 15px;
     }
   </style>
 </head>
@@ -67,11 +78,14 @@
 
   <img src="foto_mama.jpeg" alt="Foto con mamá">
 
-  <p>Mamá, mil gracias por tu amor incondicional, por tu fuerza, paciencia y tu ternura.   
-    Esta tarjeta es para ti, hecha con todo mi cariño y conocimientos que poco a poco he 
-    adquirido gracias a tu increible esfuerzo y dedicación como madre a lo largo de estos años,
-    para mi es lo mas valioso que me has dado y me dejaras.
-    Por muchos muchos festejos del dia de la madre contigo, Felicidades mamá MIRNA 🌸</p>
+  <p>
+    Mamá, mil gracias por tu amor incondicional, por tu fuerza, paciencia y tu ternura.  
+    Esta tarjeta es para ti, hecha con todo mi cariño y conocimientos que poco a poco he  
+    adquirido gracias a tu increíble esfuerzo y dedicación como madre a lo largo de estos años.  
+    Para mí es lo más valioso que me has dado y me dejarás.  
+    Por muchos, muchos festejos del Día de la Madre contigo.  
+    <strong>¡Felicidades mamá MIRNA! 🌸</strong>
+  </p>
 
   <!-- Audio invisible que se activa al primer toque -->
   <audio id="audio" preload="auto">
@@ -81,7 +95,7 @@
 
   <div class="signature">Hecho con 💻 y ❤️ por tu hijo, Damián</div>
 
-  <!-- Animación de flores -->
+  <!-- Animación de flores flotando -->
   <script>
     for (let i = 0; i < 25; i++) {
       const flower = document.createElement('div');
