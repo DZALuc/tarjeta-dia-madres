@@ -3,62 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>¡Feliz Día de las Madres!</title>
+  <title>🌷 Feliz Día Mamá 🌷</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to top right, #ffdde1, #ee9ca7);
+      background: linear-gradient(to top right, #ffdede, #ffc6e0);
       font-family: 'Segoe UI', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+      text-align: center;
       height: 100vh;
       overflow: hidden;
-      text-align: center;
+      position: relative;
     }
+
     h1 {
-      color: #fff;
       font-size: 2.5em;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 4px #00000044;
+      margin: 10px;
+      color: #c0392b;
     }
+
     p {
-      color: #fff;
       font-size: 1.2em;
-      margin-bottom: 40px;
+      color: #6e2c00;
       max-width: 90%;
     }
+
+    img {
+      width: 200px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      margin-bottom: 15px;
+    }
+
     .flower {
-      width: 100px;
-      height: 100px;
+      width: 20px;
+      height: 20px;
       background: radial-gradient(circle, #ff69b4 40%, #d63384 80%);
       border-radius: 50%;
       position: absolute;
-      animation: float 5s ease-in-out infinite;
+      animation: bloom 10s infinite ease-in-out;
     }
-    @keyframes float {
-      0% { transform: translateY(0px); opacity: 1; }
-      50% { transform: translateY(-100px); opacity: 0.7; }
-      100% { transform: translateY(0px); opacity: 1; }
+
+    @keyframes bloom {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
     }
+
+    .audio-link {
+      margin-top: 10px;
+      font-size: 1em;
+    }
+
     .signature {
       position: absolute;
-      bottom: 15px;
-      color: #fff;
+      bottom: 10px;
+      color: #8e44ad;
       font-size: 0.9em;
-      width: 100%;
     }
   </style>
 </head>
 <body>
-  <div>
-    <h1>🌸 ¡Feliz Día de las Madres! 🌸</h1>
-    <p>Mamá Mirna, esta sencilla pero significativa tarjeta es para ti. Gracias por tu amor, tu fuerza y tu alegría. ¡Te quiero mucho!</p>
+  <h1>💐 ¡Feliz Día Mamá! 💐</h1>
+  <img src="foto_mama.jpg" alt="Foto con mamá">
+  <p>Mamá, mil gracias por tu amor incondicional, por tu fuerza, paciencia y tu ternura.   
+  Esta tarjeta es para ti, hecha con todo mi cariño y conocimientos que poco a poco he adquirido gracias a tu increible esfuerzo y 
+  dedicación como madre a lo largo de estos años, para mi es lo mas valioso que me has dado y me dejaras.
+  Por muchos muchos festejos del dia de la madre contigo, Felicidades mamá MIRNA 🌸</p>
+
+  <!-- Enlace a la canción -->
+  <div class="audio-link">
+    <a href="https://www.youtube.com/watch?v=0FJk8ejV-5Q" target="_blank">🎵 Escuchar “Amor Eterno” – Juan Gabriel</a>
   </div>
-  <div class="flower" style="top: 80%; left: 30%; animation-delay: 0s;"></div>
-  <div class="flower" style="top: 70%; left: 60%; animation-delay: 1s;"></div>
-  <div class="flower" style="top: 85%; left: 45%; animation-delay: 2s;"></div>
-  <div class="signature">Hecho con 💻 y ❤️ por Damián</div>
+
+  <div class="signature">Hecho con 💻 y ❤️ por tu hijo, Damián</div>
+
+  <!-- Flores animadas -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const flower = document.createElement('div');
+      flower.className = 'flower';
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.top = Math.random() * 100 + 'vh';
+      flower.style.animationDelay = (Math.random() * 10) + 's';
+      document.body.appendChild(flower);
+    }
+  </script>
 </body>
 </html>
