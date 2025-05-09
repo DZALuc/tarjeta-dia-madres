@@ -54,10 +54,6 @@
       100% { transform: scale(0.5); opacity: 0; }
     }
 
-    audio {
-      margin-top: 10px;
-    }
-
     .signature {
       position: absolute;
       bottom: 10px;
@@ -77,27 +73,11 @@
     para mi es lo mas valioso que me has dado y me dejaras.
     Por muchos muchos festejos del dia de la madre contigo, Felicidades mamá MIRNA 🌸</p>
 
-  <!-- Reproductor de música -->
-<!-- Dentro del <body> en tu archivo index.html -->
-<audio id="audio" preload="auto">
+  <!-- Audio invisible que se activa al primer toque -->
+  <audio id="audio" preload="auto">
     <source src="amor_eterno.mp3" type="audio/mpeg">
     Tu navegador no soporta el audio.
-</audio>
-    
-<script>
-    // Reproducir al primer toque
-    const audio = document.getElementById("audio");
-    
-    document.addEventListener('click', () => {
-        audio.play().catch(() => {});
-    }, { once: true });
-    
-    // Opcional: iniciar si ya se permite (en escritorio)
-    window.addEventListener('load', () => {
-        audio.play().catch(() => {});
-    });
-</script>
-      
+  </audio>
 
   <div class="signature">Hecho con 💻 y ❤️ por tu hijo, Damián</div>
 
@@ -111,6 +91,17 @@
       flower.style.animationDelay = (Math.random() * 10) + 's';
       document.body.appendChild(flower);
     }
+
+    // Reproducción automática al primer toque
+    const audio = document.getElementById("audio");
+
+    document.addEventListener('click', () => {
+      audio.play().catch(() => {});
+    }, { once: true });
+
+    window.addEventListener('load', () => {
+      audio.play().catch(() => {});
+    });
   </script>
 </body>
 </html>
