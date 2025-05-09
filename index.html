@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¡Feliz Día de las Madres!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top right, #ffdde1, #ee9ca7);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+    h1 {
+      color: #fff;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px #00000044;
+    }
+    p {
+      color: #fff;
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      max-width: 90%;
+    }
+    .flower {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #ff69b4 40%, #d63384 80%);
+      border-radius: 50%;
+      position: absolute;
+      animation: float 5s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); opacity: 1; }
+      50% { transform: translateY(-100px); opacity: 0.7; }
+      100% { transform: translateY(0px); opacity: 1; }
+    }
+    .signature {
+      position: absolute;
+      bottom: 15px;
+      color: #fff;
+      font-size: 0.9em;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>🌸 ¡Feliz Día de las Madres! 🌸</h1>
+    <p>Mamá Mirna, esta sencilla pero significativa tarjeta es para ti. Gracias por tu amor, tu fuerza y tu alegría. ¡Te quiero mucho!</p>
+  </div>
+  <div class="flower" style="top: 80%; left: 30%; animation-delay: 0s;"></div>
+  <div class="flower" style="top: 70%; left: 60%; animation-delay: 1s;"></div>
+  <div class="flower" style="top: 85%; left: 45%; animation-delay: 2s;"></div>
+  <div class="signature">Hecho con 💻 y ❤️ por Damián</div>
+</body>
+</html>
